@@ -1,0 +1,26 @@
+{
+  "scenario_id": "api-error-spike",
+  "domain": "Application",
+  "source": "Monitoring — Grafana Alert",
+  "timestamp": "2026-04-19T11:45:00Z",
+  "alert": {
+    "title": "API Error Rate Spike — Patient Service",
+    "description": "Error rate on patient-service API increased from baseline 0.5% to 15.3% over the last 20 minutes. Majority of errors are HTTP 503 (Service Unavailable) on /api/v2/patients/lookup endpoint. P95 latency increased from 200ms to 4.2 seconds. 3 of 8 pods are in CrashLoopBackOff.",
+    "service": "patient-service",
+    "endpoint": "/api/v2/patients/lookup",
+    "error_rate_baseline": 0.5,
+    "error_rate_current": 15.3,
+    "primary_error_code": 503,
+    "p95_latency_baseline_ms": 200,
+    "p95_latency_current_ms": 4200,
+    "total_pods": 8,
+    "healthy_pods": 5,
+    "crashloop_pods": 3
+  },
+  "context": {
+    "recent_deployments": "patient-service v2.14.3 deployed 35 minutes ago",
+    "deployment_change": "Added Redis caching layer for lookup endpoint",
+    "redis_status": "Redis cluster patient-cache-prod showing connection timeouts",
+    "downstream_impact": "Clinical Portal showing 'Patient not found' errors for some lookups"
+  }
+}

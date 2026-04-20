@@ -1,0 +1,9 @@
+hostname,role,team,criticality,environment,escalation_contact
+prod-bastion-01,Production bastion / jump server,Security,Critical,production,security-oncall@davita.com
+prod-db-primary-03,Primary PostgreSQL — patient records API,Database,Critical,production,dba-oncall@davita.com
+prod-db-replica-01,PostgreSQL read replica,Database,High,production,dba-oncall@davita.com
+patient-service,Patient lookup microservice (8 pods),Application,Critical,production,app-oncall@davita.com
+patient-cache-prod,Redis cluster — patient lookup cache,Infrastructure,High,production,infra-oncall@davita.com
+clinical-portal,Clinical Portal web application,Application,Critical,production,clinical-apps@davita.com
+prod-monitoring-01,Datadog / Grafana monitoring stack,Infrastructure,High,production,infra-oncall@davita.com
+splunk-indexer-01,Splunk SIEM indexer,Security,High,production,security-oncall@davita.com

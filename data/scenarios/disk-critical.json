@@ -1,0 +1,26 @@
+{
+  "scenario_id": "disk-critical",
+  "domain": "Infrastructure",
+  "source": "Monitoring — Datadog Alert",
+  "timestamp": "2026-04-19T09:15:00Z",
+  "alert": {
+    "title": "Disk Usage Critical — Production Database",
+    "description": "Disk utilization on prod-db-primary-03 has reached 96.2% on /data volume. Growth rate: 2.1% per hour over last 6 hours. At current rate, disk will be full in approximately 1.8 hours. PostgreSQL WAL files are the primary consumer.",
+    "host": "prod-db-primary-03",
+    "volume": "/data",
+    "usage_percent": 96.2,
+    "growth_rate_per_hour": 2.1,
+    "estimated_full_hours": 1.8,
+    "top_consumers": [
+      {"path": "/data/pg_wal/", "size_gb": 180, "note": "WAL files not being archived"},
+      {"path": "/data/base/", "size_gb": 95, "note": "Normal database files"},
+      {"path": "/data/pg_log/", "size_gb": 12, "note": "Query logs with debug enabled"}
+    ]
+  },
+  "context": {
+    "host_role": "Primary PostgreSQL database — serves patient records API",
+    "replication_status": "Streaming replication to prod-db-replica-01 is healthy",
+    "last_maintenance": "Vacuum ran 3 days ago",
+    "recent_changes": "Debug logging enabled yesterday for query performance investigation"
+  }
+}

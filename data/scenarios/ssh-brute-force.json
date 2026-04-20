@@ -1,0 +1,23 @@
+{
+  "scenario_id": "ssh-brute-force",
+  "domain": "Security",
+  "source": "SIEM — Splunk Alert",
+  "timestamp": "2026-04-19T14:32:00Z",
+  "alert": {
+    "title": "Excessive Failed SSH Authentication",
+    "description": "847 failed SSH login attempts detected from IP 203.0.113.42 targeting bastion host prod-bastion-01 within 15-minute window. Multiple usernames attempted: root, admin, deploy, svc-backup. No successful authentications observed yet.",
+    "source_ip": "203.0.113.42",
+    "target_host": "prod-bastion-01",
+    "target_port": 22,
+    "failed_attempts": 847,
+    "time_window_minutes": 15,
+    "usernames_attempted": ["root", "admin", "deploy", "svc-backup", "jenkins", "ubuntu"],
+    "successful_logins": 0
+  },
+  "context": {
+    "geo_ip": "Region: Eastern Europe, ISP: Unknown VPS provider",
+    "host_role": "Production bastion / jump server",
+    "last_known_good": "No prior alerts from this IP",
+    "related_alerts": "None in past 24 hours"
+  }
+}

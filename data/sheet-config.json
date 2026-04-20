@@ -1,0 +1,6 @@
+{
+  "spreadsheet_id": "15o0xSbQWfF7xh2DDsRBINFlVeFu1RrTHCfAp9ITV_Hk",
+  "sheet_name": "Sheet1",
+  "range": "A1:F100",
+  "fallback": "data/system-inventory.csv"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "incident-triage",
+  "version": "0.2.0",
+  "description": "Triage production incidents with severity classification, historical context, and post-triage actions. Integrates with Google Sheets (system inventory), SQLite (incident tickets), and GitHub (issue tracking).",
+  "author": "AI-PDRC Team",
+  "integrations": {
+    "cli_tools": ["gws", "gh"],
+    "mcp_servers": {
+      "incidents-db": {
+        "command": "uvx",
+        "args": ["mcp-server-sqlite", "--db-path", "data/incidents.db"]
+      }
+    }
+  }
+}
